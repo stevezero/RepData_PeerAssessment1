@@ -57,7 +57,7 @@ sum(is.na(activity))
 
 2. Devise a strategy for filling in all of the missing values in the dataset. The strategy does not need to be sophisticated. For example, you could use the mean/median for that day, or the mean for that 5-minute interval, etc.
 
-I will replace missing values with the mean for that 5-minute interval.
+**I will replace missing values with the mean for that 5-minute interval.**
 
 3.Create a new dataset that is equal to the original dataset but with the missing data filled in.
 
@@ -81,7 +81,7 @@ hist(totalstepsnewdf$steps, xlab = "Total Steps", ylab = "Frequency [Days]", mai
 mean(totalstepsnewdf$steps)
 median(totalstepsnewdf$steps)
 ```
-The impact of imputing missing data with the interval mean is a change to the median, but not the mean (as the mean is simply incremented by values equal to itself. Had the median been used to impute, the median would be the same and the mean would have changed).
+**The impact of imputing missing data with the interval mean is a change to the median, but not the mean (as the mean is simply incremented by values equal to itself. Had the median been used to impute, the median would be the same and the mean would have changed).**
 
 ## Are there differences in activity patterns between weekdays and weekends?
 1. Create a new factor variable in the dataset with two levels - "weekday" and "weekend" indicating whether a given date is a weekday or weekend day.
@@ -96,6 +96,6 @@ newdf$day <- as.factor(newdf$day)
 ```{r weekendinterval}
 library(lattice)
 stepsintervalweekend = aggregate(steps~interval + day, data = newdf, mean)
-xyplot(steps~interval | day, data = stepsintervalweekend, type = "l", layout = c(1,2), main = "Camparison of weekend vs weekday average steps by time of day")
+xyplot(steps~interval | day, data = stepsintervalweekend, type = "l", layout = c(1,2), main = "Camparison of weekend vs weekday average steps by interval")
 ```
 
